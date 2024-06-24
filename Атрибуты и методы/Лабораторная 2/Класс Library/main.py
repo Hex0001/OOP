@@ -25,7 +25,7 @@ class Book:
         :param pages: Количество страниц
         """
         if not isinstance(id_, int):
-            raise TypeError("Ошибка. Идентификатор книги должен быть целым")
+            raise TypeError("Ошибка. Идентификатор книги должен быть целым числом")
         if id_ < 0:
             raise ValueError("Ошибка. Идентификатор книги должен быть больше 0")
         self.id_ = id_
@@ -81,6 +81,9 @@ class Library:
         :param id_: Идентификатор книги
         :return: Индекс элемента с требуемым id_ в списке books
         """
+        if not isinstance(id_, int):
+            raise TypeError("Ошибка. Идентификатор книги должен быть целым числом")
+
         for index, book in enumerate(self.books):
             if id_ == book.id_:
                 return index
