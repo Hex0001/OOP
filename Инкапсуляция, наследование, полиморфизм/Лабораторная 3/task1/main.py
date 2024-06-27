@@ -62,7 +62,7 @@ class AudioBook(Book):
         self.__duration = duration
 
     def __str__(self):
-        # Перегрузка для примера
+        # Перегрузка без обращения через super к методу родительского класса
         return f"Аудиокнига {self.name!r}. Автор {self.author!r}. Длительность {round(self.duration, 2)}."
 
     def __repr__(self):
