@@ -37,6 +37,8 @@ class PaperBook(Book):
     def pages(self, pages):
         if not isinstance(pages, int):
             raise TypeError("Ошибка. pages должен быть int")
+        if pages <= 0:
+            raise ValueError("Ошибка. pages должен быть больше 0")
         self.__pages = pages
 
     def __str__(self):
@@ -58,7 +60,9 @@ class AudioBook(Book):
     @duration.setter
     def duration(self, duration):
         if not isinstance(duration, float):
-            raise ValueError("Ошибка. duration должен быть float")
+            raise TypeError("Ошибка. duration должен быть float")
+        if duration <= 0:
+            raise ValueError("Ошибка. duration должен быть больше 0")
         self.__duration = duration
 
     def __str__(self):
